@@ -35,9 +35,7 @@ npm run build
 
 [MIT](LICENSE)
 
-## Author
 
-[Akshat Mittal](https://akshatmittal61.vercel.app)
 
 ## Acknowledgements
 
