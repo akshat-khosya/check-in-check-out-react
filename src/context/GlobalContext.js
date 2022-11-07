@@ -7,6 +7,9 @@ const GlobalContext = createContext({
 	isAuthenticated: "",
 	setIsAuthenticated: () => {},
 	axiosInstance: undefined,
+	machineId:"",
+	setMachineId:()=>{},
+	geoLocation:"",setGeoLocation:()=>{}
 });
 
 export default GlobalContext;
