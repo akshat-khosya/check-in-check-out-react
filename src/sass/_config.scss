@@ -1,0 +1,25 @@
+@mixin responsive($breakpoint) {
+	@if $breakpoint==mobile {
+		@media (max-width: 672px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==tablet {
+		@media (min-width: 672px) and (max-width: 879.98px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==desktop {
+		@media (min-width: 880px) and (max-width: 1198.98px) {
+			@content;
+		}
+	}
+
+	@if $breakpoint==bigDesktop {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+}
