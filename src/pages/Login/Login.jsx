@@ -1,12 +1,19 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import GlobalContext from "../../context/GlobalContext";
+import {
+  BrowserRouter,
+  Routes, //replaces "Switch" used till v5
+  Route,
+  useNavigate
+} from "react-router-dom";
 import "./Login.scss";
 
 function Login() {
-  const { axiosInstance, machineId, geoLocation } = useContext(GlobalContext);
+  const { axiosInstance, machineId, geoLocation,setIsAuthenticated,setUserData,setAccessToken,setRefreshToken } = useContext(GlobalContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
 
   function handleChange1(event) {
     setEmail(event.target.value);
@@ -22,6 +29,7 @@ function Login() {
     event.preventDefault();
     let s = email;
     let p = password;
+    
     // console.log(email);
     if (email.length == 0 && password.length < 6) {
       // console.log("submit")
@@ -39,6 +47,16 @@ function Login() {
           geoLocation: geoLocation,
         });
         console.log(res.data);
+        setIsAuthenticated(true)
+        const {accessToken,refreshToken,userData}=res.data;
+        // console.log(accessToken);
+        setAccessToken(accessToken);
+        setRefreshToken(refreshToken);
+        setUserData(userData);
+        window.localStorage.setItem('refreshToken', refreshToken);
+        
+          navigate("/dashboard");
+        
         
       } catch (error) {
         alert(error.response.data.msg);

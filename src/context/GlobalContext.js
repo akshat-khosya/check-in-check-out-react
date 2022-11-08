@@ -1,15 +1,21 @@
 import { createContext } from "react";
 
 const GlobalContext = createContext({
-	breakpoint: () => {},
+	breakpoint: () => { },
 	isLoading: "",
-	setIsLoading: () => {},
+	setIsLoading: () => { },
 	isAuthenticated: "",
-	setIsAuthenticated: () => {},
+	setIsAuthenticated: () => { },
 	axiosInstance: undefined,
-	machineId:"",
-	setMachineId:()=>{},
-	geoLocation:"",setGeoLocation:()=>{}
+	machineId: "",
+	setMachineId: () => { },
+	geoLocation: "", setGeoLocation: () => { },
+	userData: null
+	, setUserData: () => { },
+	accessToken: "",
+	setAccessToken: () => { },
+	refreshToken: ""
+	, setRefreshToken:()=>{}
 });
 
 export default GlobalContext;
