@@ -2,10 +2,17 @@ import React, { useContext } from "react";
 import GlobalContext from "../../context/GlobalContext";
 import "./dashboard.scss";
 // import React from "react";
+<<<<<<< HEAD
 // import ReactDOM from "react-dom";
 import QRCode from "react-qr-code";
 // import { QrReader } from 'react-qr-reader';
 // import QRscanner from "./Qrscan";
+=======
+import ReactDOM from "react-dom";
+import QRCode from "react-qr-code";
+import { QrReader } from 'react-qr-reader';
+import QRscanner from "./Qrscan";
+>>>>>>> c679d44a28ccc497936544647b41010f1198391c
 // import Test from "./Qrscan";
 import App1 from "./Qrscan";
 // function QRScan()
@@ -48,7 +55,11 @@ const Dashboard = () => {
 		role==2 && <Student/>
 	}
 	</main>
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> c679d44a28ccc497936544647b41010f1198391c
 	);
 };
 
